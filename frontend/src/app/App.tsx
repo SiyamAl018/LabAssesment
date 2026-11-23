@@ -6,9 +6,13 @@ import FarmsPage from '../pages/FarmsPage';
 import FarmHistoryPage from '../pages/FarmHistoryPage';
 import ReportsPage from '../pages/ReportsPage';
 import NotFoundPage from '../pages/NotFoundPage';
+import AuthPage from '../pages/AuthPage';
 
 export default function App() {
-  return <Routes><Route element={<AppLayout />}>
+  return <Routes>
+    <Route path="/login" element={<AuthPage key="login" mode="login" />} />
+    <Route path="/signup" element={<AuthPage key="signup" mode="signup" />} />
+    <Route element={<AppLayout />}>
     <Route index element={<DashboardPage />} />
     <Route path="visits/new" element={<RecordVisitPage />} />
     <Route path="farms" element={<FarmsPage />} />
